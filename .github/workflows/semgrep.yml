@@ -19,11 +19,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run Semgrep
-        uses: returntocorp/semgrep-action@v1
-        with:
-          config: auto
-          generateSarif: "1"
+      - name: Install Semgrep
+        run: pip install semgrep
+
+      - name: Run Semgrep scan (generate SARIF)
+        run: |
+          semgrep scan --config=auto --sarif --output=semgrep.sarif
 
       - name: Upload SARIF results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v3
