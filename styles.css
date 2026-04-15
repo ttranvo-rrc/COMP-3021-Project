@@ -1,0 +1,289 @@
+/* Global Defaults */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #f8f8f8;
+    color: #000000;
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Header, Footer */
+
+.header, .footer {
+    background: #eaeaea;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+/* Navigation Buttons */
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #efefef;
+    border-radius: 8px;
+}
+
+.nav a {
+    flex: 1 1 calc(50% - 12px);
+    text-decoration: none;
+}
+
+.nav button {
+    width: 100%;
+    background: #000000;
+    color: white;
+    border: none;
+    padding: 14px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.nav button:hover {
+    background-color: #0077ff;
+}
+
+/* Sections, Forms */
+
+.section {
+    background: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.section h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    border-left: 4px solid #0077ff;
+    padding-left: 10px;
+}
+
+/* Fieldsets & labels */
+
+fieldset {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #cfcfcf;
+    border-radius: 8px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* Inputs, Textarea */
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #999;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #0077ff;
+    outline: none;
+}
+
+/* Error Messages */
+
+.error,
+.error-msg,
+.error-message {
+    color: #ff0000;
+    font-size: 14px;
+    padding-top: 4px;
+    display: block;
+}
+
+/* Buttons */
+
+button,
+.submit-btn {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 14px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    width: auto;
+}
+
+button:hover,
+.submit-btn:hover {
+    background-color: #0077ff;
+}
+
+/* Delete Buttons */
+.delete-volunteer,
+.delete-feedback,
+.delete-donation {
+    background-color: #ff0000;
+}
+
+.delete-volunteer:hover,
+.delete-feedback:hover,
+.delete-donation:hover {
+    background-color: #cc0000;
+}
+
+/* Tables */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th,td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #e0e0e0;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #eef6ff;
+}
+
+/* Make tables scrollable on small screens */
+table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* Summary sections */
+
+.donation-list,
+.total-donations,
+#feedbackSummary {
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+/* Event Signup Layout */
+
+.event-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Media Queries for Mobile */
+
+/* Tablets & Small Screens < 900px */
+@media (max-width: 900px) {
+    .page-container {
+        padding: 10px;
+    }
+
+    .section {
+        padding: 20px;
+    }
+}
+
+/* Phones < 700px */
+@media (max-width: 700px) {
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav a {
+        flex: 1 1 100%;
+    }
+
+    .nav button {
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    fieldset {
+        padding: 12px;
+    }
+
+    .section {
+        padding: 18px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
+
+/* Very Small Phones < 480px */
+@media (max-width: 480px) {
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .section h2 {
+        font-size: 18px;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+        font-size: 15px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    nav button {
+        width: 100%;
+    }
+}

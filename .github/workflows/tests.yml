@@ -1,0 +1,39 @@
+name: Run Jest Tests
+
+permissions:
+    contents: read
+    issues: read
+    checks: write
+    pull-requests: write
+
+on: [pull_request]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+            - name: Use Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: "20.x"
+
+            - name: Install Dependencies
+              run: npm ci
+
+            - name: Run Jest Tests
+              run: npm test
+            
+            - name: Archive Jest Test Results
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                  name: jest-test-results
+                  path: test-results/jest/
+
+            - name: Publish Test Results
+              uses: EnricoMi/publish-unit-test-result-action@v2
+              if: always()
+              with:
+                  files: test-results/jest/*.xml
