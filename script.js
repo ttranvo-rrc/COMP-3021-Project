@@ -1,7 +1,7 @@
 //Remember to run browserify script.js -o bundle.js when you are done writing your script.js!
 
 //___________________
-// Volunteer Hours Tracker
+// Volunteer Hours Tracker.
 //___________________
 
 // Temporary Storage Object
